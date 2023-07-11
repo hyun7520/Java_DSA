@@ -23,7 +23,7 @@ public class LinkedList {
     public void printList() {
         Node temp = head;
         while (temp != null) {
-            System.out.println(temp);
+            System.out.println(temp.value);
             temp = temp.next;
         }
     }
@@ -46,5 +46,24 @@ public class LinkedList {
 
     public void getLength() {
         System.out.println("Length: "+length);
+    }
+    public void append(int value) {
+        // Create New Node & Add Node to End
+        Node newNode = new Node(value);
+        if(length == 0) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+        }
+        length++;
+    }
+    public void prepend(int value) {
+        // Create New Node & Add Node to Beginning
+
+    }
+    public void insert(int index, int value) {
+        // Create New Node & Insert Node
     }
 }
