@@ -11,18 +11,30 @@ public class Main {
         myLinkedList.getTail();
         myLinkedList.getLength();
 
+        myLinkedList.prepend(5);
+
         System.out.println("\nLinked List:");
         myLinkedList.printList();
 
-        /*
-            EXPECTED OUTPUT:
-            ----------------
-            Head: 4
-            Tail: 4
-            Length: 1
+        myLinkedList.set(1, 4);
 
-            Linked List:
-            4
-        */
+        myLinkedList.insert(2, 9);
+
+        System.out.println("\nLinked List:");
+        myLinkedList.printList();
+
+        myLinkedList.reverse();
+
+        System.out.println("\nLinked List:");
+        myLinkedList.printList();
+
+//        System.out.println("Node :" + myLinkedList.get(2).value);
+
+//        // doesn't return value if list is empty;
+//        System.out.println("remove last: "+myLinkedList.removeLast().value);
+//        System.out.println("remove first: "+myLinkedList.removeFirst().value);
+//
+//        System.out.println("\nLinked List:");
+//        myLinkedList.printList();
     }
 }
