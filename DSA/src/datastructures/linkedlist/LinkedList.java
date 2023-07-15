@@ -161,4 +161,78 @@ public class LinkedList {
             temp = after;
         }
     }
+
+    public Node findMiddleNode() {
+        Node slow = head;
+        Node fast = head;
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+
+    public boolean hasLoop() {
+        Node slow = head;
+        Node fast = head;
+
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public Node findKthFromEnd(int k){
+        Node slow = head;
+        Node fast = head;
+
+        for(int i = 0; i < k; i++) {
+            if (fast == null) {
+                return null;
+            }
+            fast = fast.next;
+        }
+        while(fast != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return slow;
+    }
+
+    public void reverseBetween(int m, int n) {
+        if(head == null) return;
+        Node dummy = new Node(0);
+        dummy.next = head;
+        Node before = dummy;
+
+        for(int i = 0; i < n; i++) {
+            before = before.next;
+        }
+
+        Node current = before.next;
+        for(int i = 0; i < n - m; i++) {
+            Node temp = current.next;
+            current.next = temp.next;
+            temp.next = before.next;
+            before.next = temp;
+        }
+        head = dummy.next;
+    }
+
+    public void partitionList(int x) {
+        Node dummy = new Node(0);
+        dummy.next = head;
+        Node start = dummy;
+
+        while(start != null) {
+            start = start.next;
+            if(start.value < x) {
+                start.next =
+            }
+        }
+    }
 }
