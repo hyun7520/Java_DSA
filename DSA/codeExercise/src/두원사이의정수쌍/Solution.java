@@ -5,8 +5,10 @@ class Solution {
         long answer = 0;
 
 //        한 사분면을 구하고 *4
-        answer += (r2 - r1) + 1;
-        
+        for(int i = 1; i < r2; i++) {
+
+        }
+
 
         return answer;
     }
