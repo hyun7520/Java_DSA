@@ -1,5 +1,7 @@
 package datastructures.Stack;
 
+import java.util.ArrayList;
+
 public class Stack {
     private Node top;
     private int height;
@@ -44,5 +46,48 @@ public class Stack {
         temp.next = null;
         height--;
         return temp;
+    }
+
+//    Stack using array list
+    public static class Stack_AR<T> {
+        private ArrayList<T> stackList = new ArrayList<>();
+
+        public ArrayList<T> getStackList() {
+            return stackList;
+        }
+
+        public void printStack() {
+            for (int i = stackList.size() - 1; i >= 0; i--) {
+                System.out.println(stackList.get(i));
+            }
+        }
+
+        public boolean isEmpty() {
+            return stackList.size() == 0;
+        }
+
+        public T peek() {
+            if (isEmpty()) {
+                return null;
+            } else {
+                return stackList.get(stackList.size() - 1);
+            }
+        }
+
+        public int size() {
+            return stackList.size();
+        }
+
+        public void push(T value) {
+            stackList.add(value);
+        }
+
+        public T pop() {
+            if(isEmpty()) return null;
+            int size = stackList.size();
+            T temp = stackList.get(size-1);
+            stackList.remove(size-1);
+            return temp;
+        }
     }
 }
