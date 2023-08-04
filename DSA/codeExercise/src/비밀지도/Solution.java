@@ -24,7 +24,7 @@ public class Solution {
     public String binaryMap(int num) {
         String temp = Integer.toBinaryString(num);
         String bin = "";
-        if(temp.length())
+
         for(int i = 0 ; i < temp.length(); i++) {
             if(temp.charAt(i) == '1') {
                 bin += '#';
