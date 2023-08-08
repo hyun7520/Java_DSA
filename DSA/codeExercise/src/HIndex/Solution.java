@@ -12,7 +12,7 @@ public class Solution {
             }
             if(cnt >= h && h > max) max = h;
         }
-        
+
         answer = max;
         return answer;
     }
