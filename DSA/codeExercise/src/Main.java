@@ -6,12 +6,39 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 public class Main {
     public static void main(String[] args) throws IOException {
-            BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 
-            String str = bf.readLine();
-            int num = Integer.parseInt(bf.readLine());
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
 
-            System.out.println(str);
-            System.out.println(num);
+        // 00*00
+        // 0***0
+        // *****
+        // 0***0
+        // 00*00
+
+        // 00 01 02 03 04  5/2 - 1 = 1
+        // 10 11 12 13 14
+        // 20 21 22 23 24
+
+        int n = Integer.parseInt(br.readLine());
+
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                if(i+j <= n/2 - 1) {
+                    sb.append(" ");
+                }
+                else if(j-i >= n/2 + 1) {
+                    sb.append(" ");
+                } else {
+                    sb.append('*');
+                }
+            }
+            sb.append("\n");
+        }
+
+        String str = sb.toString();
+
+        System.out.println(str);
+
     }
 }
