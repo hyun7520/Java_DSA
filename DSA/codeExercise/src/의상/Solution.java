@@ -2,12 +2,13 @@ package 의상;
 
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
 
 
 public class Solution {
     public int solution(String[][] clothes) {
-        int answer = 0;
+        int answer = 1;
 
         Map<String, Integer> combo = new HashMap<>();
 
@@ -19,11 +20,19 @@ public class Solution {
             }
         }
 
-        for(String[] s : clothes){
+        /*
+        Iterator<Integer> it = combo.values().iterator();
 
+        while(it.hasNext()) {
+            answer *= it.next() + 1;
+        }
+        */
+
+        for (Integer integer : combo.values()) {
+            answer *= integer + 1;
         }
 
-        return answer;
+        return answer - 1;
     }
 }
 class Main {
